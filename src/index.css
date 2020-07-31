@@ -24,10 +24,13 @@ code {
   justify-content: space-between;
   align-items: flex-end;
 }
+.main .left-section .img-header .form-group {
+  margin-bottom: 0px;
+}
 .main .left-section .img-header h2 {
   margin-left: 10%;
 }
-.main .left-section .img-header h3 {
+.main .left-section .img-header form {
   margin-right: 10%;
 }
 .main .left-section .img-footer {
@@ -49,6 +52,7 @@ code {
 }
 .main .right-section p {
   margin: 10px;
+  font-size: 1.3rem;
 }
 .main .img-container {
   position: relative;

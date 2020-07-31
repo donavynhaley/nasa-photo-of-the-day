@@ -1,11 +1,15 @@
-import React, {useState, useEffect} from "react";
-
+import React from "react";
+import { Form, FormGroup, Input} from 'reactstrap';
 function ImageHeader(props){
-    const {title, date} = props;
+    const {title, date, changeDate} = props;
     return (
         <div className="img-header">
         <h2>{title}</h2>
-        <h3>{date}</h3>
+        <Form>
+            <FormGroup>
+                <Input type="date" name="date" id="exampleEmail"  onChange={(e) =>{changeDate(e.target.value)}} />
+            </FormGroup>
+        </Form>
       </div>
     );
 }

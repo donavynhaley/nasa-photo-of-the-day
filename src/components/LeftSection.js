@@ -1,16 +1,23 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import ImageHeader from './ImageHeader.js';
 import ImageFooter from './ImageFooter.js';
-
+import RenderMedia from './RenderMedia.js';
 function LeftSection(props){
-    const {SdUrl, HdUrl, title, date, copyright} = props;
+    const {SdUrl, HdUrl, title, date, copyright, changeDate, switchUrl, astroUrl, mediaType} = props;
     return (
         <section className="left-section">
-        <div className="img-container">
-            <ImageHeader title={title} date={date}></ImageHeader>
-            <img src={SdUrl} class="img-fluid" alt="Responsive image"></img>
-            <ImageFooter></ImageFooter>
-        </div>
+
+            <ImageHeader title={title} changeDate={changeDate} date={date}></ImageHeader>
+            <RenderMedia mediaType={mediaType} astroUrl={astroUrl}></RenderMedia>
+            <ImageFooter 
+            SdUrl={SdUrl} 
+            HdUrl={HdUrl} 
+            copyright={copyright}
+            switchUrl={switchUrl}
+            astroUrl={astroUrl}
+            >
+            </ImageFooter>
+
       </section>
     );
 }
