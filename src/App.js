@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from "react";
 import "./App.css";
-import downloadLogo from "./assets/images/download.png"
+import GetImage from './components/GetImage.js';
+import RightSection from './components/RightSection.js'
+import LeftSection from './components/LeftSection.js';
 
 // API Key gWUHFoXqRrldO8cHpW9aU55FjssJ0CPzTOhQp82a
 // Example Use: https://api.nasa.gov/planetary/apod?api_key=4LTBH2pc9kXTBhZhWFUK7oGJoUklB1UuPhhD7aOF
@@ -10,7 +12,7 @@ function App() {
   const [astroPic, setAstroPic] = useState({});
 
   useEffect(() => {
-    axios.get("https://api.nasa.gov/planetary/apod?api_key=gWUHFoXqRrldO8cHpW9aU55FjssJ0CPzTOhQp82a&date=2020-07-30")
+    axios.get("https://api.nasa.gov/planetary/apod?api_key=gWUHFoXqRrldO8cHpW9aU55FjssJ0CPzTOhQp82a")
       .then(response =>{
         console.log(response);
         setAstroPic(response.data)
@@ -26,27 +28,15 @@ function App() {
         <h1>NASA Astronomy Picture of the Day</h1>
       </header>
       <div className="main">
-        <section className="left-section">
-          <div className="img-header">
-            <h2>{astroPic.title}</h2>
-            <h3>{astroPic.date}</h3>
-          </div>
-          <div className="img-container" style={{
-            backgroundImage: `url(${astroPic.url})`,
-            height: `${astroPic.url.natualHight}`
-          }} >
-            <div className="sd-hd">
-              <button>SD</button>
-              <button>HD</button>
-              <img src={downloadLogo} alt="Download icon" id="download-icon" width="30px" height="30px"/>
-              <p>Copyright: {astroPic.copyright}</p>
-            </div>
-          </div>
-        </section>
-        <section className="right-section">
-          <h2>Description</h2>
-          <p>{astroPic.explanation}</p>
-        </section>
+        <LeftSection 
+        title={astroPic.title} 
+        date={astroPic.date} 
+        SdUrl={astroPic.url}  
+        HdUrl={astroPic.hdurl} 
+        copyright={astroPic.copyright}
+        >
+        </LeftSection>
+        <RightSection explanation={astroPic.explanation}></RightSection>
       </div>
     </div>
   );
