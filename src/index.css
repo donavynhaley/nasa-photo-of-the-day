@@ -7,32 +7,70 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
-.img-footer {
+.main {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
 }
-.img-footer a {
-  margin-top: 16px;
-  margin-bottom: 16px;
+.main .left-section {
+  width: 70%;
+  background-color: lightgray;
+  border: 1px lightgray;
+  border-radius: 5px;
+  margin-left: 5%;
 }
-.footer {
+.main .left-section .img-header {
   display: flex;
-  flex-flow: row nowrap;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  background-color: wheat;
+  align-items: flex-end;
 }
-.footer #github-link {
-  text-decoration: none;
-  color: black;
-  margin: 16px;
+.main .left-section .img-header .form-group {
+  margin-bottom: 0px;
+}
+.main .left-section .img-header h2 {
+  margin-left: 10%;
+}
+.main .left-section .img-header form {
+  margin-right: 10%;
+}
+.main .left-section .img-footer {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
-.footer #github-link img {
-  align-self: center;
+.main .left-section .img-footer .buttons {
+  margin-left: 10%;
 }
-.footer p {
-  margin: 16px;
+.main .left-section .img-footer p {
+  margin-right: 10%;
+}
+.main .right-section {
+  width: 30%;
+  background-color: #efefef;
+  margin-right: 5%;
+}
+.main .right-section p {
+  margin: 10px;
+  font-size: 1.3rem;
+}
+.main .img-container {
+  position: relative;
+}
+.main .img-container img {
+  max-width: 100%;
+  height: auto;
+}
+.main .img-container .sd-hd {
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-direction: row;
+  left: 15%;
+  bottom: 0px;
+}
+.main .img-container .sd-hd button {
+  height: 35px;
+  width: 35px;
 }
